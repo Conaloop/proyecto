@@ -1,6 +1,6 @@
 // ===== CONFIGURACIÓN DEL CHATBOT =====
-const GEMINI_API_KEY = 'AIzaSyArOuOys3Dj7-mLYgGtrqE9ya8-qx7oKVQ'; // Reemplaza con tu API key de Google
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+const GEMINI_API_KEY = 'AIzaSyCitZCYRFIR2QWzcJ_GHH4q5fm56aTe1Yw'; // Reemplaza con tu API key de Google
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=';
 
 // ===== ELEMENTOS DEL DOM =====
 const chatbotToggle = document.querySelector('.chatbot-toggle');
@@ -85,8 +85,11 @@ async function sendMessage() {
     showLoadingIndicator();
     
     try {
+        // Construir URL de la API
+        const fullUrl = GEMINI_API_URL + GEMINI_API_KEY;
+        
         // Enviar a Gemini API
-        const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+        const response = await fetch(fullUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,7 +114,18 @@ async function sendMessage() {
         });
         
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            let errorMessage = `HTTP ${response.status}`;
+            
+            try {
+                const errorData = await response.json();
+                if (errorData.error) {
+                    errorMessage = errorData.error.message || errorData.error;
+                }
+            } catch (e) {
+                // Si no es JSON válido, usar el mensaje por defecto
+            }
+            
+            throw new Error(errorMessage);
         }
         
         const data = await response.json();
@@ -132,18 +146,24 @@ async function sendMessage() {
                 content: botResponse
             });
         } else {
-            throw new Error('No se recibió respuesta válida');
+            throw new Error('No se recibió respuesta válida de la API');
         }
     } catch (error) {
         removeLoadingIndicator();
-        console.error('Error:', error);
+        console.error('Error completo:', error);
         
-        if (error.message.includes('401')) {
-            addBotMessage('❌ Error de autenticación: Verifica que tu API key sea válida. Visita https://aistudio.google.com/app/apikey');
-        } else if (error.message.includes('429')) {
-            addBotMessage('⏱️ Error: Has excedido el límite de solicitudes. Por favor, espera un momento.');
+        const errorMsg = error.message || 'Error desconocido';
+        
+        if (errorMsg.includes('404')) {
+            addBotMessage('❌ Error 404: API no encontrada. Verifica tu API key en https://aistudio.google.com/app/apikey');
+        } else if (errorMsg.includes('401') || errorMsg.includes('PERMISSION_DENIED')) {
+            addBotMessage('❌ Error 401: API key inválida o no autorizada. Obtén una nueva en https://aistudio.google.com/app/apikey');
+        } else if (errorMsg.includes('429') || errorMsg.includes('RESOURCE_EXHAUSTED')) {
+            addBotMessage('⏱️ Error: Has excedido el límite de solicitudes. Espera un momento e intenta de nuevo.');
+        } else if (errorMsg.includes('Failed to fetch')) {
+            addBotMessage('❌ Error de conexión: No se pudo conectar a la API. Verifica tu conexión a internet.');
         } else {
-            addBotMessage(`❌ Error: ${error.message || 'No se pudo conectar con el servicio'}`);
+            addBotMessage(`❌ Error: ${errorMsg}`);
         }
     }
 }
