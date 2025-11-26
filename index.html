@@ -1,15 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodrigo Alberto Batum Gomez</title>
+    <title>Rodrigo Alberto Batum Gomez | Desarrollador Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div>
-    <h1> Rodrigo Alberto Batum Gomez </h1>
-    <P>ESTUDIANTE TECNM</P>
-    
-</div>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Rodrigo<span>.dev</span></div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hola, soy <span class="highlight">Rodrigo Alberto Batum Gomez</span></h1>
+                <p class="hero-subtitle">Estudiante de Ingeniería en Sistemas | Desarrollador Web</p>
+                <p class="hero-description">Soy el administrador de mi vida, apasionado por la tecnología y el desarrollo de soluciones innovadoras.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Contactar</a>
+                    <a href="#experiencia" class="btn btn-secondary">Ver Proyectos</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="photo-frame">
+                    <img src="profile.jpg" alt="Rodrigo Alberto Batum Gomez" class="profile-photo">
+                    <div class="photo-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Desliza</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="working.jpg" alt="Rodrigo trabajando" class="about-photo">
+                </div>
+                <div class="about-text">
+                    <h3>Estudiante de Ingeniería en Sistemas Computacionales</h3>
+                    <p>Actualmente curso mi carrera en el <strong>Tecnológico Nacional de México (TECNM)</strong>, donde desarrollo mis habilidades en desarrollo de software y gestión de bases de datos.</p>
+                    <p>Con <strong>3 años de experiencia</strong> en tecnologías como Java, HTML, CSS y SQL, me he especializado en crear soluciones web eficientes y bases de datos robustas.</p>
+                    <p>Mi filosofía es simple: <em>"Soy el administrador de mi vida"</em> - creo firmemente en tomar el control de mi desarrollo profesional y personal, estableciendo metas claras y trabajando constantemente para alcanzarlas.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>3+</h4>
+                            <p>Años de Experiencia</p>
+                        </div>
+                        <div class="stat">
+                            <h4>4</h4>
+                            <p>Tecnologías Principales</p>
+                        </div>
+                        <div class="stat">
+                            <h4>∞</h4>
+                            <p>Ganas de Aprender</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <p class="section-subtitle">Tecnologías en las que me especializo</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">☕</div>
+                    <h3>Java</h3>
+                    <p>Desarrollo de aplicaciones robustas con programación orientada a objetos</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML & CSS</h3>
+                    <p>Creación de interfaces web modernas, responsivas y accesibles</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Diseño y gestión de bases de datos relacionales eficientes</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Experiencia en creación de sitios web completos y funcionales</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" class="experience">
+        <div class="container">
+            <h2 class="section-title">Áreas de Experiencia</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🖥️</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollo de Páginas Web</h3>
+                        <p>Experiencia en la creación de sitios web modernos, responsivos y optimizados. Implementación de diseños atractivos utilizando HTML5, CSS3 y mejores prácticas de desarrollo frontend.</p>
+                        <ul class="experience-list">
+                            <li>Diseño responsive y mobile-first</li>
+                            <li>Optimización de rendimiento</li>
+                            <li>UI/UX amigable</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">🗃️</div>
+                    <div class="timeline-content">
+                        <h3>Gestión de Bases de Datos</h3>
+                        <p>Diseño, implementación y administración de bases de datos relacionales. Experiencia en modelado de datos, consultas SQL complejas y optimización de rendimiento.</p>
+                        <ul class="experience-list">
+                            <li>Diseño de esquemas de base de datos</li>
+                            <li>Consultas SQL avanzadas</li>
+                            <li>Normalización y optimización</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">⚙️</div>
+                    <div class="timeline-content">
+                        <h3>Programación en Java</h3>
+                        <p>Desarrollo de aplicaciones utilizando Java, aplicando principios de POO, patrones de diseño y buenas prácticas de programación para crear software mantenible y escalable.</p>
+                        <ul class="experience-list">
+                            <li>Programación orientada a objetos</li>
+                            <li>Desarrollo de aplicaciones</li>
+                            <li>Integración con bases de datos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p>Estoy disponible para proyectos freelance, colaboraciones o simplemente para conectar y compartir ideas sobre tecnología.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>rodrigo.batum@ejemplo.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🎓</span>
+                            <div>
+                                <h4>Institución</h4>
+                                <p>TECNM - Tecnológico Nacional de México</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <div>
+                                <h4>Estado</h4>
+                                <p>Disponible para proyectos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="GitHub">GitHub</a>
+                        <a href="#" class="social-link" title="LinkedIn">LinkedIn</a>
+                        <a href="#" class="social-link" title="Twitter">Twitter</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Rodrigo Alberto Batum Gomez. Todos los derechos reservados.</p>
+            <p class="footer-quote">"Soy el administrador de mi vida"</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
