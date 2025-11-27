@@ -1,5 +1,5 @@
 // ===== CONFIGURACIÓN DEL CHATBOT =====
-const GEMINI_API_KEY = 'AIzaSyCitZCYRFIR2QWzcJ_GHH4q5fm56aTe1Yw'; // Reemplaza con tu API key de Google
+
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=';
 
 // ===== ELEMENTOS DEL DOM =====
